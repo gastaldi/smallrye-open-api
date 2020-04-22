@@ -258,6 +258,23 @@ public class JaxRsAnnotationScannerTest extends JaxRsDataObjectScannerTestBase {
         assertJsonEquals("resource.testBasicJaxRsDefinitionScanning.json", result);
     }
 
+    @Test
+    public void testRefWithRequiredIsCreated() throws IOException, JSONException {
+        Indexer indexer = new Indexer();
+
+        // Test samples
+        index(indexer, "test/io/smallrye/openapi/runtime/scanner/entities/Fruit.class");
+        index(indexer, "test/io/smallrye/openapi/runtime/scanner/resources/FruitResource.class");
+
+        OpenApiAnnotationScanner scanner = new OpenApiAnnotationScanner(emptyConfig(), indexer.complete());
+
+        OpenAPI result = scanner.scan();
+
+        printToConsole(result);
+        assertJsonEquals("resource.testRefWithRequiredIsCreated.json", result);
+    }
+
+
     @Path("/tags1")
     @Tag(name = "tag3", description = "TAG3 from TagTestResource1")
     @SuppressWarnings("unused")

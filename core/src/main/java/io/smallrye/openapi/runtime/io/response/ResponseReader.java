@@ -5,18 +5,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.eclipse.microprofile.openapi.models.media.Content;
-import org.eclipse.microprofile.openapi.models.media.MediaType;
-import org.eclipse.microprofile.openapi.models.responses.APIResponse;
-import org.eclipse.microprofile.openapi.models.responses.APIResponses;
-import org.jboss.jandex.AnnotationInstance;
-import org.jboss.jandex.AnnotationTarget;
-import org.jboss.jandex.AnnotationValue;
-import org.jboss.jandex.MethodInfo;
-import org.jboss.logging.Logger;
-
 import com.fasterxml.jackson.databind.JsonNode;
-
 import io.smallrye.openapi.api.models.media.ContentImpl;
 import io.smallrye.openapi.api.models.media.MediaTypeImpl;
 import io.smallrye.openapi.api.models.responses.APIResponseImpl;
@@ -32,6 +21,15 @@ import io.smallrye.openapi.runtime.io.link.LinkReader;
 import io.smallrye.openapi.runtime.io.schema.SchemaFactory;
 import io.smallrye.openapi.runtime.scanner.spi.AnnotationScannerContext;
 import io.smallrye.openapi.runtime.util.JandexUtil;
+import org.eclipse.microprofile.openapi.models.media.Content;
+import org.eclipse.microprofile.openapi.models.media.MediaType;
+import org.eclipse.microprofile.openapi.models.responses.APIResponse;
+import org.eclipse.microprofile.openapi.models.responses.APIResponses;
+import org.jboss.jandex.AnnotationInstance;
+import org.jboss.jandex.AnnotationTarget;
+import org.jboss.jandex.AnnotationValue;
+import org.jboss.jandex.MethodInfo;
+import org.jboss.logging.Logger;
 
 /**
  * Reading the APIResponse annotation
